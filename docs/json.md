@@ -21,7 +21,7 @@ The name is what your thing is called. Some tips:
 * Don't put "js" or "jquery" in the name. It's assumed that it's js, since you're
   writing a package.json file, and it's assumed that it's a jQuery plugin, because
   you're registering it on the jQuery Plugins Site. Additionally, you will be listing
-  `jquery` as a dependency, along with compatible versions (see 'Dependencies' below). 
+  `jquery` as a dependency, along with compatible versions (see 'Dependencies' below).
 * The name ends up being part of a URL. Any name with non-url-safe characters will
   be rejected. Also, it can't start with a dot or an underscore. The jQuery Plugins
   Site is UTF-8.
@@ -124,8 +124,9 @@ must be a git repository on GitHub.
 Do it like this:
 
     "repository" :
-      { "type" : "git"
-      , "url" : "http://github.com/cowboy/jquery-bbq.git"
+      {
+        "type" : "git",
+        "url" : "http://github.com/cowboy/jquery-bbq.git"
       }
 
 The URL should be a publicly available (perhaps read-only) url that can be handed
@@ -139,7 +140,7 @@ range. The version range is EITHER a string which has one or more
 space-separated descriptors, OR a range like "fromVersion - toVersion".
 
 If a plugin that you depend on uses other plugins as dependencies that your plugin
-uses as well, we recommend you list those also. In the event that the depended on 
+uses as well, we recommend you list those also. In the event that the depended on
 plugin alters its dependencies, your plugin's dependency tree won't be affected.
 
 Libraries such as jQuery or underscore, though not plugins, should be listed as
@@ -168,16 +169,17 @@ is a semver compatible version identifier.
 For example, these are all valid:
 
     { "dependencies" :
-      { "foo" : "1.0.0 - 2.9999.9999"
-      , "bar" : ">=1.0.2 <2.1.2"
-      , "baz" : ">1.0.2 <=2.3.4"
-      , "boo" : "2.0.1"
-      , "qux" : "<1.0.0 || >=2.3.1 <2.4.5 || >=2.5.2 <3.0.0"
-      , "asd" : "http://asdf.com/asdf.tar.gz"
-      , "til" : "~1.2"
-      , "elf" : "~1.2.3"
-      , "two" : "2.x"
-      , "thr" : "3.3.x"
+      {
+        "foo" : "1.0.0 - 2.9999.9999",
+        "bar" : ">=1.0.2 <2.1.2",
+        "baz" : ">1.0.2 <=2.3.4",
+        "boo" : "2.0.1",
+        "qux" : "<1.0.0 || >=2.3.1 <2.4.5 || >=2.5.2 <3.0.0",
+        "asd" : "http://asdf.com/asdf.tar.gz",
+        "til" : "~1.2",
+        "elf" : "~1.2.3",
+        "two" : "2.x",
+        "thr" : "3.3.x"
       }
     }
 
