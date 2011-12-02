@@ -3,8 +3,6 @@ Specification of the jQuery Plugins Site package.json
 
 # DRAFT (heavily inspired by that of npm. Thanks isaacs)
 
-## DESCRIPTION
-
 This document is all you need to know about what's required in your package.json
 file. It must be actual JSON, not just a JavaScript object literal.
 
