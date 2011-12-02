@@ -6,6 +6,22 @@ Specification of the jQuery Plugins Site package.json
 This document is all you need to know about what's required in your package.json
 file. It must be actual JSON, not just a JavaScript object literal.
 
+## Required Fields
+
+* name
+* version
+* title
+* author
+* licenses
+* dependencies
+
+## Optional Fields
+
+* description
+* keywords
+* homepage
+* files
+
 ## name
 
 The *most* important things in your package.json are the name and version fields.
@@ -60,11 +76,6 @@ a patch version.
 A nice complete and pretty title of your plugin. Include jQuery (if you want) and
 spaces and mixed case, unlike name (see above).
 
-## description
-
-Put a description in it. It's a string. This helps people discover your
-plugin, as it's listed on the jQuery Plugins Site.
-
 ## author
 
 See below: people fields
@@ -94,6 +105,11 @@ plugin alters its dependencies, your plugin's dependency tree won't be affected.
 Libraries such as jQuery or underscore, though not plugins, should be listed as
 dependencies as well. This gives you the flexibility to specify compatible versions
 of each library you depend on.
+
+## description
+
+Put a description in it. It's a string. This helps people discover your
+plugin, as it's listed on the jQuery Plugins Site.
 
 ## keywords
 
