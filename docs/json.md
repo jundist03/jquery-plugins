@@ -65,6 +65,36 @@ spaces and mixed case, unlike name (see above).
 Put a description in it. It's a string. This helps people discover your
 plugin, as it's listed on the jQuery Plugins Site.
 
+## author
+
+See below: people fields
+
+## licenses
+
+Array of licenses under which the plugin is provided. Each license is a hash with
+a "type" property specifying the type of license and a url property linking to the actual text. If the license is one of the official open source licenses the official license name or its abbreviation may be explicated with the "type" property. If an abbreviation is provided (in parentheses), the abbreviation must be used.
+
+    "licenses": [
+       {
+           "type": "GPLv2",
+           "url": "http://www.example.com/licenses/gpl.html",
+       }
+    ]
+
+## dependencies
+
+Dependencies are specified with a simple hash of package name to version
+range. The version range is EITHER a string which has one or more
+space-separated descriptors, OR a range like "fromVersion - toVersion".
+
+If a plugin that you depend on uses other plugins as dependencies that your plugin
+uses as well, we recommend you list those also. In the event that the depended on
+plugin alters its dependencies, your plugin's dependency tree won't be affected.
+
+Libraries such as jQuery or underscore, though not plugins, should be listed as
+dependencies as well. This gives you the flexibility to specify compatible versions
+of each library you depend on.
+
 ## keywords
 
 Put keywords in it. It's an array of strings. This helps people
@@ -86,64 +116,13 @@ is an object with a "name" field and optionally "url" and "email", like this:
 
 Both the email and url are optional.
 
-## licenses
-
-Array of licenses under which the plugin is provided. Each license is a hash with
-a "type" property specifying the type of license and a url property linking to the actual text. If the license is one of the official open source licenses the official license name or its abbreviation may be explicated with the "type" property. If an abbreviation is provided (in parentheses), the abbreviation must be used.
-
-    "licenses": [
-       {
-           "type": "GPLv2",
-           "url": "http://www.example.com/licenses/gpl.html",
-       }
-    ]
-
 ## files
 
-The "files" field is an array of files that make up your plugin. If
-you name a folder in the array, then it will also include the files
+The "files" field is an array of files that make up your plugin. This should
+be a file path relative to the root of your plugin folder.
+
+If you name a folder in the array, then it will also include the files
 inside that folder.
-
-## main
-
-The main field is a file that is your plugin.
-
-This should be a file path relative to the root of your plugin folder.
-
-## minified
-
-This file is a minified copy of the main plugin file. Optional.
-
-## repository
-
-Specify the place where your code lives. This is required. For now it
-must be a git repository on GitHub.
-
-Do it like this:
-
-    "repository" :
-      {
-        "type" : "git",
-        "url" : "http://github.com/cowboy/jquery-bbq.git"
-      }
-
-The URL should be a publicly available (perhaps read-only) url that can be handed
-directly to a VCS program without any modification. It should not be a url to an
-html project page that you put in your browser. It's for computers.
-
-## dependencies
-
-Dependencies are specified with a simple hash of package name to version
-range. The version range is EITHER a string which has one or more
-space-separated descriptors, OR a range like "fromVersion - toVersion".
-
-If a plugin that you depend on uses other plugins as dependencies that your plugin
-uses as well, we recommend you list those also. In the event that the depended on
-plugin alters its dependencies, your plugin's dependency tree won't be affected.
-
-Libraries such as jQuery or underscore, though not plugins, should be listed as
-dependencies as well. This gives you the flexibility to specify compatible versions
-of each library you depend on.
 
 ### Specifying Versions
 
@@ -210,7 +189,3 @@ The following are equivalent:
 
 You may not supply a comparator with a version containing an x. Any
 digits after the first "x" are ignored.
-
-## bundledDependencies
-
-Array of package names that will be bundled when publishing the package.
